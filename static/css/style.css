@@ -1,0 +1,650 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+        135deg,
+        #021B79,
+        #0575E6,
+        #00B4DB);
+
+    overflow-x:hidden;
+
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+nav{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 8%;
+
+}
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    gap:40px;
+
+    list-style:none;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#BEE9FF;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    width:100%;
+
+    min-height:85vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:30px 8%;
+
+    gap:60px;
+
+}
+
+/* ===========================
+   LEFT
+=========================== */
+
+.hero-left{
+
+    flex:1;
+
+}
+
+.hero-left h1{
+
+    font-size:55px;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+}
+
+.hero-left p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    opacity:.95;
+
+}
+
+/* ===========================
+   RIGHT
+=========================== */
+
+.hero-right{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+
+.upload-card{
+
+    width:460px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+    border:1px solid rgba(255,255,255,.25);
+
+}
+
+/* ===========================
+   ICON
+=========================== */
+
+.upload-icon{
+
+    width:100px;
+
+    height:100px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+    color:#0284C7;
+
+    font-size:42px;
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.upload-card h2{
+
+    margin-top:25px;
+
+    margin-bottom:10px;
+
+}
+
+.upload-card p{
+
+    opacity:.8;
+
+    margin-bottom:30px;
+
+}
+
+/* ===========================
+   INPUT
+=========================== */
+
+input[type=file]{
+
+display:none;
+
+}
+
+label{
+
+display:inline-block;
+
+padding:14px 34px;
+
+background:white;
+
+color:#0369A1;
+
+border-radius:40px;
+
+cursor:pointer;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+label:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* ===========================
+   IMAGE PREVIEW
+=========================== */
+
+.preview{
+
+margin-top:25px;
+
+}
+
+.preview img{
+
+display:none;
+
+width:260px;
+
+border-radius:18px;
+
+box-shadow:0 15px 30px rgba(0,0,0,.35);
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+button{
+
+margin-top:30px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:50px;
+
+background:#0EA5E9;
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-4px);
+
+background:#38BDF8;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+text-align:center;
+
+padding:30px;
+
+opacity:.85;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:950px){
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+padding-top:20px;
+
+}
+
+.hero-left h1{
+
+font-size:42px;
+
+}
+
+.upload-card{
+
+width:100%;
+
+max-width:420px;
+
+}
+
+nav{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+nav ul{
+
+gap:20px;
+
+}
+
+}
+
+.result-card{
+
+margin-top:35px;
+
+padding:30px;
+
+background:white;
+
+border-radius:20px;
+
+color:#222;
+
+animation:fade .8s;
+
+}
+
+.result-image{
+
+width:220px;
+
+border-radius:15px;
+
+margin:20px 0;
+
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.progress{
+
+height:18px;
+
+background:#ddd;
+
+border-radius:30px;
+
+margin:20px 0;
+
+overflow:hidden;
+
+}
+
+.progress-bar{
+
+height:100%;
+
+background:linear-gradient(90deg,#06b6d4,#0284c7);
+
+border-radius:30px;
+
+transition:1s;
+
+}
+
+.fish-details{
+
+margin-top:25px;
+
+text-align:left;
+
+line-height:2;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* RESULT PAGE */
+
+.result-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+
+.result-card {
+    width: 90%;
+    max-width: 700px;
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+.result-card h1 {
+    margin-bottom: 25px;
+}
+
+
+.image-section img {
+
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    margin-bottom: 25px;
+
+}
+
+
+
+.fish-name {
+
+    font-size: 35px;
+    font-weight: bold;
+
+    margin: 15px;
+
+}
+
+
+
+.confidence-box {
+
+    margin: 20px 0;
+
+}
+
+
+.confidence-bar {
+
+    width: 100%;
+    height: 25px;
+
+    background: #ddd;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+
+.confidence-fill {
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #00c853,
+        #64dd17
+    );
+
+}
+
+
+
+.confidence-box p {
+
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+
+
+.confidence-status {
+
+    padding: 10px 20px;
+
+    border-radius: 20px;
+
+    color: white;
+
+    font-weight: bold;
+
+}
+
+
+
+.high {
+
+    background: green;
+
+}
+
+
+.medium {
+
+    background: orange;
+
+}
+
+
+.low {
+
+    background: red;
+
+}
+
+
+
+.info-section {
+
+    margin-top: 30px;
+
+    text-align: left;
+
+    background: #f5f7fa;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+}
+
+
+
+.back-button {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 12px 25px;
+
+    background: #007bff;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+}

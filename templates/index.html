@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fish Species Identification System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+
+        FishSpecies ID
+
+    </div>
+
+   <!--- <ul>
+
+        <li><a href="#">Home</a></li>
+
+        <li><a href="#">About</a></li>
+
+        <li><a href="#">Predict</a></li>
+
+    </ul> -->
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+
+Fish Species Identification System
+
+</h1>
+
+<p>
+
+Identify West African fish species instantly using Artificial Intelligence and Deep Learning.
+
+Simply upload a fish image and let the trained CNN model recognize the species with high accuracy.
+
+</p>
+
+</div>
+
+<div class="hero-right">
+
+<form action="/predict"
+      method="POST"
+      enctype="multipart/form-data">
+
+<div class="upload-card">
+
+<div class="upload-icon">
+
+<i class="fa-solid fa-cloud-arrow-up"></i>
+
+</div>
+
+<h2>
+
+Upload Fish Image
+
+</h2>
+
+<p>
+
+Supported formats:
+
+JPG • PNG • JPEG
+
+</p>
+
+<input
+type="file"
+id="imageInput"
+name="image"
+accept="image/*"
+required>
+
+<label for="imageInput">
+
+Choose Image
+
+</label>
+
+<div class="preview">
+
+<img id="previewImage">
+
+</div>
+
+<button type="submit">
+
+Predict Fish
+
+</button>
+
+</div>
+
+</form>
+{% if prediction %}
+
+<div class="result-card">
+
+    <h2>Prediction Result</h2>
+
+    <img src="{{ image }}" class="result-image">
+
+    <h1>{{ prediction }}</h1>
+
+    <div class="progress">
+
+        <div>
+        class="progress-bar"
+        style="width:{{confidence}}%;">
+
+        </div>
+
+    </div>
+
+    <p>
+
+        Confidence
+
+        <strong>{{confidence}}%</strong>
+
+    </p>
+
+    {% if info %}
+
+    <div class="fish-details">
+
+        <h3>Fish Information</h3>
+
+        <p><strong>Scientific Name:</strong> {{info.scientific}}</p>
+
+        <p><strong>Family:</strong> {{info.family}}</p>
+
+        <p><strong>Habitat:</strong> {{info.habitat}}</p>
+
+        <p><strong>Feeding:</strong> {{info.feeding}}</p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endif %}
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Fish Species Identification System
+
+</p>
+
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

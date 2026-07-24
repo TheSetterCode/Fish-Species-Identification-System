@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Prediction Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="result-container">
+
+    <div class="result-card">
+
+        <h1>Fish Identification Result</h1>
+
+        <div class="image-section">
+            <img src="{{ image }}" alt="Uploaded Fish Image">
+        </div>
+
+
+        <div class="prediction-section">
+
+            <h2>Prediction</h2>
+
+            <div class="fish-name">
+                {{ prediction }}
+            </div>
+
+
+            <h3>Confidence Score</h3>
+
+            <div class="confidence-box">
+
+                <div class="confidence-bar">
+                    <div class="confidence-fill"style="width: {{ confidence }}%;">
+                    </div>
+                </div>
+
+                <p>{{ confidence }}%</p>
+
+            </div>
+
+
+            {% if confidence >= 80 %}
+                <span class="confidence-status high">
+                    High Confidence
+                </span>
+
+            {% elif confidence >= 50 %}
+
+                <span class="confidence-status medium">
+                    Medium Confidence
+                </span>
+
+            {% else %}
+
+                <span class="confidence-status low">
+                    Low Confidence
+                </span>
+
+            {% endif %}
+
+
+        </div>
+
+
+
+        <div class="info-section">
+
+    <h2>About {{ prediction }}</h2>
+
+    <p>
+        <strong>Scientific Name:</strong>
+        {{ info.scientific }}
+    </p>
+
+    <p>
+        <strong>Family:</strong>
+        {{ info.family }}
+    </p>
+
+    <p>
+        <strong>Habitat:</strong>
+        {{ info.habitat }}
+    </p>
+
+    <p>
+        <strong>Feeding:</strong>
+        {{ info.feeding }}
+    </p>
+
+    <p>
+        <strong>Description:</strong>
+        {{ info.description }}
+    </p>
+
+</div>
+
+
+        <a href="/" class="back-button">
+            Identify Another Fish
+        </a>
+
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
